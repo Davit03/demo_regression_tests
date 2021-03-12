@@ -70,7 +70,7 @@ public class MainPageTests extends BaseTest {
 //        Assert.assertEquals(mainPage.checkOddsFormat(), "/");
 //    }
 
-
+//
 //    @Test
 //    public void checkOddsFormatForDecimal() {
 //        mainPage.clickOnLeftMenu();
