@@ -8,7 +8,7 @@ import pages.MainPage;
 
 public class MainPageTests extends BaseTest {
     MainPage mainPage = new MainPage();
-//    LeftMenu leftMenu = new LeftMenu();
+    LeftMenu leftMenu = new LeftMenu();
     LogInPage logInPage = new LogInPage();
 
 
