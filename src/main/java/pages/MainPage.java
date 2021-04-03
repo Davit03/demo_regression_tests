@@ -11,9 +11,6 @@ public class MainPage extends LogInPage {
     public SelenideElement userName = $(".home-wrapper-login");
     public SelenideElement selectLanguage = $("div:nth-child(5) .select-contain-m > select");
     public SelenideElement leftMenuIcon = $(".left-top-nav");
-    public SelenideElement oddsFormat = $("#view-container > div.footer-m-parent > div:nth-child(6) > div > ul > li:nth-child(2) > div > select");
-    public SelenideElement firsLeagueInTheList = $(" li:nth-child(1) > div.competition-naw-wrapper-m > div > ul > li:nth-child(1) > a > p > span");
-    public SelenideElement event = $(" div:nth-child(2) > div:nth-child(1) > div > ul > li:nth-child(2) > div > div > span");
 
     public MainPage clickOnLoginTitle() {
         loginTitle.click();
@@ -24,7 +21,6 @@ public class MainPage extends LogInPage {
         userName.click();
         return this;
     }
-
 
     public MainPage getUserName(String text) {
         userName.shouldHave(Condition.text(text));
@@ -52,22 +48,7 @@ public class MainPage extends LogInPage {
         leftMenuIcon.click();
         return this;
     }
-
-    public MainPage selectOddsFormat(String value) {
-        oddsFormat.selectOptionByValue(value);
-        return this;
-    }
-
-    public String checkOddsFormat() {
-        String text = event.getText();
-        String ch = String.valueOf(text.charAt(1));
-        return ch;
-    }
-
-    public MainPage openFootballMatch() {
-        leftMenuIcon.click();
-        return this;
-    }
+    
     public MainPage clickOnFirstLeague() {
         firsLeagueInTheList.click();
         return this;
