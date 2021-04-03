@@ -1,9 +1,7 @@
 package tests;
 
-import com.codeborne.selenide.AssertionMode;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.JavascriptException;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -26,25 +24,11 @@ public class BaseTest {
         Configuration.savePageSource = false;
         open(BASE_URL);
         sleep(5000);
-        closeNewVersionPopup();
     }
 
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
         closeWebDriver();
-    }
-
-
-    protected void closeNewVersionPopup() {
-        if (popupCloseButton.isDisplayed()) {
-            popupCloseButton.click();
-        }
-    }
-
-    protected void closePopup2() {
-        if (popup2.isDisplayed()) {
-            popup2.click();
-        }
     }
 
 }

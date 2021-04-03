@@ -5,20 +5,21 @@ import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class MainPage extends LogInPage {
+public class MainPage extends SignInPage {
 
-    public SelenideElement loginTitle = $(".right-top-nav-new-h:nth-child(2)");
-    public SelenideElement userName = $(".home-wrapper-login");
-    public SelenideElement selectLanguage = $("div:nth-child(5) .select-contain-m > select");
-    public SelenideElement leftMenuIcon = $(".left-top-nav");
+    public SelenideElement loginTitle = $("button.btn.s-small.sign-in");
+    public SelenideElement userIcon = $("div.hdr-user-bc > i");
+    public SelenideElement userName = $("span.u-i-p-p-u-i-d-username-bc.ellipsis");
+    public SelenideElement selectLanguage = $("div:nth-child(2) > div > label > select");
+
 
     public MainPage clickOnLoginTitle() {
         loginTitle.click();
         return this;
     }
 
-    public MainPage clickOnUserName() {
-        userName.click();
+    public MainPage clickOnUserIcon() {
+        userIcon.click();
         return this;
     }
 
@@ -37,23 +38,5 @@ public class MainPage extends LogInPage {
         loginTitle.shouldHave(Condition.text(text));
         return this;
     }
-
-    public String getGeoText() {
-        String text = loginTitle.getOwnText();
-        return text;
-    }
-
-
-    public MainPage clickOnLeftMenu() {
-        leftMenuIcon.click();
-        return this;
-    }
-    
-    public MainPage clickOnFirstLeague() {
-        firsLeagueInTheList.click();
-        return this;
-    }
-
-
 
 }

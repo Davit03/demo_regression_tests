@@ -1,15 +1,14 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
-
 import static com.codeborne.selenide.Selenide.$;
 
 public class RightMenuPage {
-    public SelenideElement myAccountIcon = $(".profile > div.title-row-u-m > p > span");
-    public SelenideElement changePasswordTitle = $(".profile > div.open-view-single-u-m > ul > li:nth-child(2) > a > p > span");
+    public SelenideElement myProfileTitle = $("div.u-i-p-links-lists-holder-bc > div:nth-child(4) > span");
+    public SelenideElement changePasswordTitle = $("a:nth-child(2) > span");
 
     public RightMenuPage openChangeUserPasswordPage() {
-        myAccountIcon.click();
+        myProfileTitle.click();
         changePasswordTitle.click();
         return this;
     }

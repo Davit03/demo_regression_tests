@@ -1,29 +1,33 @@
 package tests;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.LeftMenu;
-import pages.LogInPage;
+import pages.SignInPage;
 import pages.MainPage;
 
 public class MainPageTests extends BaseTest {
     MainPage mainPage = new MainPage();
-    LeftMenu leftMenu = new LeftMenu();
-    LogInPage logInPage = new LogInPage();
+    SignInPage signInPage = new SignInPage();
 
+    @Test
+    public void logInTest() {
+        mainPage.clickOnLoginTitle();
+        signInPage.logIn();
+        mainPage.clickOnUserIcon();
+        mainPage.getUserName("Davit Vardanyan");
 
+    }
 
     @Test
     public void changeAppLanguageToEnglish() {
         mainPage.selectAppLanguage("eng")
-                .getLanguageText("LOGIN");
+                .getLanguageText("Sign in");
 
     }
 
     @Test
     public void changeAppLanguageToRussian() {
         mainPage.selectAppLanguage("rus")
-                .getLanguageText("Логин");
+                .getLanguageText("вход");
 
     }
 
@@ -36,23 +40,17 @@ public class MainPageTests extends BaseTest {
 
     @Test
     public void changeAppLanguageToGeorgian() {
-        mainPage.selectAppLanguage("geo");
-        Assert.assertEquals("შედით თქვენს ანგარიშზე", mainPage.getGeoText());
+        mainPage.selectAppLanguage("geo")
+                .getLanguageText("ავტორიზაცია");
 
     }
 
     @Test
     public void changeAppLanguageToPersian() {
         mainPage.selectAppLanguage("fas")
-                .getLanguageText("ورود به حساب کاربری");
+                .getLanguageText("ورود");
 
     }
 
-    @Test
-    public void logInTest() {
-        mainPage.clickOnLoginTitle();
-        logInPage.logIn();
-        mainPage.getUserName("DAVIT.VARDANYAN@BETCONSTRUCT.COM");
 
-    }
 }
