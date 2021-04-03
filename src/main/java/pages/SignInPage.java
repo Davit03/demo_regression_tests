@@ -24,14 +24,13 @@ public class SignInPage {
         return this;
     }
 
-    public SignInPage clickOnSigninButton() throws InterruptedException {
-        wait(3000);
-        signInButton.shouldBe(Condition.enabled);
+    public SignInPage clickOnSigninButton() {
+        signInButton.waitUntil(Condition.enabled, 10000);
         signInButton.click();
         return this;
     }
 
-    public SignInPage signIn() throws InterruptedException {
+    public SignInPage signIn() {
         typeInEmailField(userEmail);
         typeInPasswordField(userPassword);
         clickOnSigninButton();

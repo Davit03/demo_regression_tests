@@ -9,7 +9,7 @@ public class MainPageTests extends BaseTest {
     SignInPage signInPage = new SignInPage();
 
     @Test
-    public void logInTest() throws InterruptedException {
+    public void SgnInTest(){
         mainPage.clickOnLoginTitle();
         signInPage.signIn();
         mainPage.clickOnUserIcon();
