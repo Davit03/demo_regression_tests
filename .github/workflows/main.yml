@@ -5,14 +5,14 @@ on: push
 jobs:
 
   super-lint:
- 
-    name: Lint code base
-    runs-on: ubuntu-latest
+    runs-on: ${{matrix.os}}
+    strategy:
+      matrix:
+       os: [ubuntu-latest, windows-latest, macOS-latest]
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      # Runs the Super-Linter action
+        
       - name: Run tests
         run: mvn clean test
