@@ -24,7 +24,8 @@ public class SignInPage {
         return this;
     }
 
-    public SignInPage clickOnSigninButton() {
+    public SignInPage clickOnSigninButton() throws InterruptedException {
+        wait(3000);
         signInButton.shouldBe(Condition.enabled);
         signInButton.click();
         return this;
