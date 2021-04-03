@@ -15,4 +15,4 @@ jobs:
 
       # Runs the Super-Linter action
       - name: Run tests
-        run: mvn test
+        run: mvn clean test
