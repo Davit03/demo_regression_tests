@@ -31,7 +31,7 @@ public class SignInPage {
         return this;
     }
 
-    public SignInPage logIn() {
+    public SignInPage signIn() throws InterruptedException {
         typeInEmailField(userEmail);
         typeInPasswordField(userPassword);
         clickOnSigninButton();

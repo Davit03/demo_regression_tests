@@ -14,9 +14,9 @@ public class UserProfileTests extends BaseTest {
 
 
     @Test
-    public void changeUserPasswordTest() {
+    public void changeUserPasswordTest() throws InterruptedException {
         mainPage.clickOnLoginTitle();
-        signInPage.logIn();
+        signInPage.signIn();
         mainPage.clickOnUserIcon();
         rightMenuPage.openChangeUserPasswordPage();
         userProfilePage

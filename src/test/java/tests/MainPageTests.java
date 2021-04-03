@@ -9,9 +9,9 @@ public class MainPageTests extends BaseTest {
     SignInPage signInPage = new SignInPage();
 
     @Test
-    public void logInTest() {
+    public void logInTest() throws InterruptedException {
         mainPage.clickOnLoginTitle();
-        signInPage.logIn();
+        signInPage.signIn();
         mainPage.clickOnUserIcon();
         mainPage.getUserName("Davit Vardanyan");
 
