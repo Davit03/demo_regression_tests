@@ -4,7 +4,7 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-
+//
 import static com.codeborne.selenide.Selenide.*;
 
 public class BaseTest {
